@@ -19,7 +19,8 @@ triggered after the cursor stops moving. For example, you can use to show
 
 ```vim
 augroup CursedCursorLine
-    autocmd WinEnter * set cursorline
+    autocmd!
+    autocmd WinEnter * if !cursed#is_disabled() | set cursorline | endif
     autocmd User CursedStartedMoving :set nocursorline
     autocmd User CursedStoppedMoving :set cursorline
 augroup END
@@ -30,6 +31,7 @@ this:
 
 ```vim
 augroup CursedBlameLine
+    autocmd!
     autocmd WinEnter,WinLeave * silent :DisableBlameLine
     autocmd User CursedStartedMoving silent :DisableBlameLine
     autocmd User CursedStoppedMoving silent :EnableBlameLine
