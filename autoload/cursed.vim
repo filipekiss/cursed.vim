@@ -29,6 +29,9 @@ function! cursed#timer_stop() abort
 endfunction
 
 function! cursed#timer_ended_callback(timer_id) abort
+    if cursed#is_disabled()
+        return
+    endif
     " Reset the status to allow the CursedStartedMoving event to be fired again
     let s:status = s:cursed_move_cursor
     let s:timer_id = 0
@@ -36,7 +39,7 @@ function! cursed#timer_ended_callback(timer_id) abort
 endfunction
 
 function! cursed#is_disabled() abort
-    return &buftype ==# 'terminal' || get(b:, 'cursed_disabled', 0) || cursed#hasFileType(g:cursed_disabled_filetypes)
+    return &buftype ==# 'terminal' || mode() ==? 'c' || get(b:, 'cursed_disabled', 0) || cursed#hasFileType(g:cursed_disabled_filetypes)
 endfunction
 
 function! cursed#hasFileType(list)
