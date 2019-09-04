@@ -26,8 +26,8 @@ augroup CursedCursorLine
 augroup END
 ```
 
-If you have [nvim-blame-line][blameline], for example, you may do something like
-this:
+If you have [nvim-blame-line][blameline]<sup id="fnref-1">[1](#fn-1)</sup>, for
+example, you may do something like this:
 
 ```vim
 augroup CursedBlameLine
@@ -59,6 +59,14 @@ won't trigger in terminal buffers.
 
 > default value: let g:cursed_disabled_filetypes = ['startify', 'fzf']
 
+--
+
+##### Notes
+
+<a name="fn-1">1</a>. This is a forked version that works with cursed.vim. The
+[original version](https://github.com/tveskag/nvim-blame-line) would error when
+ran against a `NO NAME` buffer. [← back](#fnref-1)
+
 **cursed.vim** © 2019+, Filipe Kiss Released under the [MIT] License.<br>
 Authored and maintained by Filipe Kiss.
 
@@ -66,4 +74,4 @@ Authored and maintained by Filipe Kiss.
 > Twitter [@filipekiss](https://twitter.com/filipekiss)
 
 [mit]: http://mit-license.org/
-[blameline]: https://github.com/tveskag/nvim-blame-line
+[blameline]: https://github.com/filipekiss/nvim-blame-line
