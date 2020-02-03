@@ -39,7 +39,7 @@ function! cursed#timer_ended_callback(timer_id) abort
 endfunction
 
 function! cursed#is_disabled() abort
-    return &buftype ==# 'terminal' || mode() ==? 'c' || get(b:, 'cursed_disabled', 0) || cursed#hasFileType(g:cursed_disabled_filetypes)
+    return get(b:, 'cursed_cmd_disabled', 0) || &buftype ==# 'terminal' || mode() ==? 'c' || get(b:, 'cursed_disabled', 0) || cursed#hasFileType(g:cursed_disabled_filetypes)
 endfunction
 
 function! cursed#hasFileType(list)
