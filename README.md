@@ -1,5 +1,8 @@
 # cursed.vim
 
+> This plugin is no longer maintained. If you are using Neovim, there's a Lua
+> version available at [filipekiss/cursed.nvim](https://github.com/filipekiss/cursed.nvim)
+
 ![Cursed example](https://user-images.githubusercontent.com/48519/64197116-89d63580-ce85-11e9-803d-554447ff3aee.gif)
 
 ## Install
